@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+</head>
+<body>
+
+<script type="text/javascript">
+//매개변수가 없고 반환값이 없는 경우
+// "*"를 20번 출력
+var i;
+function line() {
+	for(i = 1; i<=20; i++){
+	document.write(i + "* ");
+	}
+	document.write("for문 종료<br>");
+}
+line(); //함수 호출
+line();
+</script>
+<button type="button" onclick="line();">line() 메소드 호출</button>
+<br>
+<script type="text/javascript">
+//매개변수가 있고, 반환값이 없는 경우
+function line1(str){
+	for(i = 1; i<=20; i++){
+	document.write(i + str+" ");
+	}
+	document.write("for문 종료<br>");
+}
+line1("@");
+line1("#");
+</script>
+<br>
+<script type="text/javascript">
+//매개변수가 없고, 반환값이 있는 경우
+// function sum(){
+// 	let num1 = parseInt(prompt("num1값을 입력"));
+// 	let num2 = parseInt(prompt("num2값을 입력"));	
+// 	let hap = num1 + num2;
+// 	document.write(`${hap}<br>`);
+//	return hap; //호출한 쪽으로 반환값을 돌려줌
+// }
+// let result = sum(); //호출 하고 결과값도 가지고 있음
+// document.write("result = " + result);
+// document.write("sum() = " + sum());
+</script>
+<br>
+<script type="text/javascript">
+//매개변수가 있고, 반환값이 있는 경우
+	function ramen(name) {
+		switch (name) {
+		case "신라면":
+			alert("신라면을 선택");
+			return "신라면";
+		case "안성탕면":
+			alert("안성탕면을 선택");
+			return "안성탕면";
+		case "짜파게티":
+			alert("짜파게티를 선택");
+			return "짜파게티";
+		}
+	}
+	document.write(ramen('신라면'));
+</script>
+
+	<button type="button" onclick="ramen('신라면')">신라면</button>
+	<button type="button" onclick="ramen('안성탕면')">안성탕면</button>
+	<button type="button" onclick="ramen('짜파게티')">짜파게티</button>
+	
+
+</body>
+</html>

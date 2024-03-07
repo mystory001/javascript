@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 기본 콘텐츠 변경</title>
+<!-- CDN방식 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<button id="btn_1">text 수정</button>
+<button id="btn_2">text 가져오기</button>
+<p id="first">text1</p>
+<p id="second">시작시간</p>
+
+<ul>
+<li>13시 A 클래스에서 시작</li>
+<li>20시 B 클래스에서 시작</li>
+</ul>
+
+<script type="text/javascript">
+//$("선택자").text() : 선택자의 하위 text 노드의 값을 읽어오기
+//$("선택자").text("내용") : 선택자의 하위 text 노드의 값 변경
+//$("선택자").html(): 선택자의 하위 text 노드의 값을 읽어오기(태그 방식)
+//$("선택자").html("<>내용</>"): 선택자의 하위 text 노드의 값 변경(태그 방식)
+
+$(function() {
+	//텍스트 수정
+	$("#btn_1").click(function() {
+		$("#first").text("수업시작");
+	});
+	
+	$("#btn_2").click(function(){
+		let some = $('ul>li:eq(0)').text()//가져오기
+		//let some = $('ul>li:eq(1)').text()//가져오기
+		$("#second").text(some); //텍스트 수정
+	});
+});
+
+//jQuery 기본 서식
+//기본 필터 선택자 : 선택한 요소 집합에서 저장한 인덱스 위치에 있는 요소
+// :eq(n), :gt(n), :lt(n), :even, :odd, :first, :last, :animated, :header, :focus
+
+
+</script>
+
+</body>
+</html>

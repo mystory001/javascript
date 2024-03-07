@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>jQuery 기본 작성</title>
+
+<!-- jQuery 라이브러리 연결 -->
+<script src="js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+<!-- jquery를 이용하여 handing -->
+<h1>jQuery1</h1>
+<h2>jQuery2</h2>
+<h3>jQuery3</h3>
+<h4>jQuery4</h4>
+<h5>jQuery5</h5>
+
+<script>
+//준비 구문
+//1.스크립트 요소를 이용하여 라이브러리 불러들이기 -> jQuery();
+//2.html 문서가 준비되고 DOM 객체에서 필요한 요소로 이동하여 작업 시작 -> jQuery(document.ready());
+//3.실행문을 실행(실행문은 그룹을 만들어 사용하기 때문에 함수 형식을 이용)
+$(function(){
+//자바스크립트 형식
+document.querySelector("h1").style.color="blue"; //바닐라 자바스크립트 구문
+		
+const h2 = document.querySelector("h2");
+h2.style.color="red";
+
+//jQuery 형식
+//${"선택자"}.메소드(매개변수1); 또는
+//${"선택자"}.매소드({"속성":"값","속성":"값",...})
+//jQuery에서 css속성을 변경
+
+//선택자에서 필요한 명령문 1개만 작성
+$("h3").css('color','green');
+jQuery("h4").css('color', 'purple');
+//선택자에서 필요한 명령문이 여러 개인 경우 작성
+$("h5").css( {
+	"color":"white",
+	"fontSize" : "2em",
+	"backgroundColor" : "black",
+	"border" : "2px soild #ccc",
+	"width" : 200
+});
+
+	});
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+</head>
+<body>
+
+<script type="text/javascript">
+//호이스팅(Hoisting) : 
+//변수 선언과 할당을 분리해서 선언 부분을 스코프(유효범위)의 가장 위쪽으로 끌어올림
+//자바스크립트 엔진의 해석 순서를 제일 먼저 수행
+
+//var로 선언된 변수 : 이미 존재하고 있는 변수명으로 중복으로 선언 가능
+var a = "자바스크립트";
+var a = "자바스크립트";
+document.write(`var 변수 a 값 = ${a}<br>`);
+document.write(`--------------------------------<br>`);
+
+b = 'var로 선언된 변수의 호이스팅';
+var b;
+document.write(`var 변수 b 값 = ${b}<br>`);
+document.write(`--------------------------------<br>`);
+
+</script>
+
+<script type="text/javascript">
+function addNumber() {
+	var sum = 10 + 2;
+	multi = 10 * 2;
+	let sub = 10 - 2;
+	const div = 10 / 2; //상수화, 초기값이 없으면 에러발생
+	
+	document.write(`함수 내의 sum 지역 변수 : ${sum}<br>`);
+	document.write(`함수 내의 multi 전역 변수 : ${multi}<br>`);
+	document.write(`함수 내의 sub 지역 변수 : ${sub}<br>`);
+	document.write(`함수 내의 div 상수 변수 : ${div}<br>`);
+	document.write(`--------------------------------<br>`);	
+	
+	//함수 내에서 새로운 값을 변수에 대입
+	sum = 20 + 5;
+	multi = 20 * 5;
+	sub = 20 - 5;
+	//div = 20 / 5; //오류. 새로운 값을 대입 할 수 없음.
+	
+	document.write(`함수 내의 sum 지역 변수 : ${sum}<br>`);
+	document.write(`함수 내의 multi 전역 변수 : ${multi}<br>`);
+	document.write(`함수 내의 sub 지역 변수 : ${sub}<br>`);
+	//document.write(`함수 내의 div 상수 변수 : ${div}<br>`);
+	document.write(`--------------------------------<br>`);		
+}
+
+addNumber(); //함수 호출
+</script>
+
+
+<script type="text/javascript">
+var x = 10;
+
+function displayNumber() {
+	x = 20;
+ 	//y = 30;
+	let z = x + y;
+	document.write(`함수 내의 x 지역 변수 : ${x}<br>`);
+	document.write(`함수 내의 y 지역 변수 : ${y}<br>`);
+	document.write(`함수 내의 z 지역 변수 : ${z}<br>`);
+	
+	var y = 20;
+
+}
+
+displayNumber();
+
+</script>
+
+
+
+</body>
+</html>

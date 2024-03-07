@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Math 객체</title>
+</head>
+<body>
+<h1>Math 객체</h1>
+new 키워드로 객체를 따로 생성하지 않음<br>
+형식) Math.속성명 또는 Math.메소드명<hr>
+<script type="text/javascript">
+document.write(Math.random()+"<br>");
+document.write((Math.random()*45)+"<br>"); //0~44사이의 값을 반환 
+document.write((Math.random()*45+1)+"<br><hr>"); //1~45사이의 값을 반환 
+
+//범위를 지정해서 임의의 숫자 발생 : Math.random()*n => n(임의(난수)의 수 범위를 n까지로 제한), 0~n까지 범위의 숫자가 발생함
+//만약 0부터 시작하지 않고 1부터 시작하려면 Math.random()*n+1
+
+//로또 번호1
+for(let i = 1; i<= 6; i++){	
+	document.write(Math.round((Math.random()*45),0)+"<br>");
+}
+document.write("<hr>");
+//로또 번호2
+for(let i = 1; i<= 6; i++){	
+	document.write(Math.floor((Math.random()*45))+"<br>");
+}
+</script>
+<hr>
+<h1>당첨자 발표</h1>
+<script type="text/javascript">
+let seed = prompt("전체 응모자 수 : "); //응모자 수 입력 받기
+let picked = Math.floor((Math.random()*seed+1)); //무작위 수 뽑기
+
+document.write("전체 응모자 수 : " + seed +"명<br>");
+document.write("당첨자 : " + picked + "번");
+
+</script>
+</body>
+</html>

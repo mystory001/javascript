@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>조건문 P489 자리 배치도 만들기</title>
+</head>
+<body>
+<h1>자리 배치도 만들기</h1>
+<script type="text/javascript">
+var memNum = prompt("입장객 수를 입력하세요.");
+var colNum = prompt("한 줄에 앉을 사람의 수를 입력하세요.");
+var rowNum = memNum/colNum; //필요한 줄의 개수
+
+if(memNum%colNum == 0){
+	rowNum = parseInt(memNum/colNum);
+} else{
+	rowNum = parseInt(memNum/colNum) + 1;
+}
+//parseInt → 실수값을 정수로 변환해주는 함수
+document.write(`${rowNum}줄이 필요`);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>document 객체</title>
+</head>
+<body>
+
+<script type="text/javascript">
+function fun1() {
+	alert(document.title);
+}
+function fun2() {
+	//문서제목변경 document.title변수에 값을 변경 => "문서제목"
+	document.title="문서제목";
+}
+function fun3() {
+	document.bgColor="black";
+}
+function fun4(a) {
+	alert(a);
+	document.bgColor=a;
+}
+
+
+</script>
+
+
+<input type="button" value="문서제목출력" onclick="fun1()">
+<input type="button" value="문서제목변경" onclick="fun2()">
+<input type="button" value="배경색변경" onclick="fun3()"><br>
+
+<input type="radio" name="ra" value="green" onclick="fun4(`green`)">green
+<input type="radio" name="ra" value="skyblue" onclick="fun4(`skyblue`)">skyblue
+<input type="radio" name="ra" value="pink" onclick="fun4(`pink`)">pink
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 날짜 생성</title>
+<!-- jQuery 라이브러리 연결 -->
+<script src="js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+
+<script type="text/javascript">
+let now = new Date();
+document.write(now+"<br>");
+document.write(now.getFullYear()+"<br>");
+document.write((now.getMonth()+1)+"월<br>");
+document.write((now.getDate())+"일<br>");
+document.write(now.getDay()+"요일<br>");
+document.write(now.getHours()+"시<br>");
+document.write(now.getMinutes()+"분<br>");
+document.write(now.getSeconds()+"초<br>");
+
+</script>
+<br>
+<p><span id="span_1"></span></p>
+<p><span id="span_2"></span></p>
+<p><span id="span_3"></span></p>
+<p><span id="span_4"></span></p>
+<p><span id="span_5"></span></p>
+<button id="btn_1">오늘날짜</button>
+<button id="btn_2">년도</button>
+<button id="btn_3">월</button>
+<button id="btn_4">일</button>
+<button id="btn_5">시분초</button>
+<hr>
+
+<script type="text/javascript">
+$(function (){
+	$("#btn_1").click(function(){
+		$("#span_1").text(now);
+	})
+	$("#btn_2").click(function(){
+		$("#span_2").text(now.getFullYear()+" 년");
+	})
+	$("#btn_3").click(function(){
+		$("#span_3").text((now.getMonth()+1)+" 월");
+	})
+	$("#btn_4").click(function(){
+		$("#span_4").text(now.getDate()+" 일");
+	})
+	$("#btn_5").click(function(){
+		$("#span_5").text(now.getHours()+" 시 " +now.getMinutes()+" 분 "+now.getSeconds()+" 초 ");
+	})
+	
+});
+	
+
+</script>
+<hr>
+<hr>
+
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+<script type="text/javascript">
+// $(document).redy(function(){
+// 	let now = new Date();
+// 	$("#btn_1").click(function(){
+// 	$("span").eq(0).text(now + "<br>");
+// 	})
+	
+// 	$("#btn_2").click(function(){
+// 	let year = now.getFullYear();
+// 	$("span").eq(1).html(year + "년<br>");
+// 	})
+	
+// 	$("#btn_3").click(function(){
+// 	let month = now.getMonth();
+// 	$("span").eq(2).html(month + "월<br>");
+// 	})
+	
+// 	$("#btn_4").click(function(){
+// 	let day = now.getDay();
+// 	$("span").eq(3).html(day + "일<br>");
+// 	})
+	
+// 	$("#btn_5").click(function(){
+// 	let time = now.getHours() +now.getMinutes()+now.getSeconds()
+// 	$("span").eq(4).html(time);
+// 	})
+// })
+</script>
+
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

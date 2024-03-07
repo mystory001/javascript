@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>location 객체</title>
+</head>
+<body>
+주소 이동<br>
+<hr>
+<input type="button" value="현재 페이지 주소 알림" onclick="fun1()">
+<input type="button" value="주소 이동" onclick="fun2()">
+<input type="button" value="경고창 + 주소 이동" onclick="fun3()">
+<input type="button" value="새로고침" onclick="fun4()">
+<input type="button" value="현재 문서에 새 문서 주소를 할당해서 새 문서 가져오기" onclick="fun5()">
+<input type="button" value="현재 문서의 url을 지우고 다른 url의 문서로 교체" onclick="fun6()">
+<input type="button" value="3초후 지정된 문서로 이동" onclick="fun7()">
+
+<script type="text/javascript">
+//location.href => 주소 표시줄의 내용을 저장하는 변수(하이퍼링크)
+//location.reload() => 새로고침 기능
+function fun1() {
+	alert(location.href);
+}
+function fun2() {
+	location.href="https://www.google.com";
+}
+function fun3() {
+	alert("history.html로 이동");
+	location.href="history.html";
+}
+function fun4() {
+	alert("새로고침, F5");
+	location.reload;
+}
+function fun5() {
+	//현재 문서에서 새 문서 주소를 할당해서 새 문서를 가져옴
+	//이전 페이지로 돌아갈 수 없는 구조
+	location.assign("https://001cloudid.tistory.com/");
+}
+function fun6() {
+	//현재 문서의 url을 지우고 다른 url의 문서로 교체
+	//이전 페이지로 돌아갈 수 없는 구조
+	location.replace("https://001cloudid.tistory.com/");
+}
+//3초 후에 지정된 문서로 이동
+function fun7(url){
+	window.setTimeout("location.href=`" + url + "`", 3000);
+}
+
+</script>
+<hr>
+
+<script type="text/javascript">
+document.write("URL : " , location.href ,"<br>");
+document.write("프로토콜 : ", location.protocol,"<br>");
+document.write("경로 : ", location.pathname,"<br>");
+document.write("포트번호 : ", location.port,"<br>");
+document.write("호스트 이름, 포트번호 : ", location.host,"<br>");
+
+</script>
+
+</body>
+</html>

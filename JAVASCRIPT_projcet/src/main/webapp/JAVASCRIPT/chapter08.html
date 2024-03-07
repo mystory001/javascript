@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수</title>
+</head>
+<body>
+
+<script type="text/javascript">
+//함수 매개변수의 기본값 지정하기
+
+//함수 선언문 형식에 의한 함수 생성 방법으로 정의한 함수는 함수 호이스팅이 이뤄짐
+//함수를 정의하기 전 호출을 해도 에러가 발생하지 않음
+document.write(`multiple(10) = ${multiple(10)}<br>`);
+function multiple(a, b=2, c=3) {
+	return a * b + c;
+}
+
+// let result = multiple(5,3,5)
+// document.write("result = " + result +"<br>");
+// document.write("multiple(5,3,5) = " + multiple(5,3,5) +"<br>");
+// document.write(`multiple() = ${multiple()}<br>`)
+// document.write(`multiple(10) = ${multiple(10)}<br>`);
+// document.write(`multiple(10,20) = ${multiple(10,20)}<br>`);
+//함수 호출 시 매개변수 값은 무조건 왼쪽부터 채워짐.
+//매개변수값을 기본값을 지정해서 사용할 경우에는 오른쪽 끝에서부터 순서대로 기본값을 설정한 매개변수를 배치. 
+</script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 기본 입출력</title>
+</head>
+<body>
+<h3>출력하기</h3>
+<p>
+ 1. 알림창(경고창) : alter()<br>
+ 2. 콘솔창 : console.log()<br>
+ 3. HTML 문서 내 : document.write()<br>
+</p>
+<hr>
+<h3>1. 알림창(경고창) : alter()</h3><br>
+<script type="text/javascript">
+//형식) alter("메세지",변수, 수식);
+alert("안녕하세요");
+alert("1+2 = " + (1+2)); 
+var a = "ㅎㅇ";
+alert(a);
+</script>
+<hr>
+<h3>2. 콘솔창 : console.log()</h3>
+<p>브라우저 내에서 소스코드의 오류를 발견하거나 변수값(간단한 연산)을 확인할 수 있는 창.(디버깅용)<br>
+단축키 Ctrl + Shift + J 또는 F12<br>
+HTML tag(태그)를 넣어서 사용할 수 없음.<br>
+</p>
+<script type="text/javascript">
+//형식) console.log("메시지", 변수, 수식);
+console.log("안녕하세요");
+console.log("1+2 = " + (1+2));
+console.log("1+2 = " , (1+2));
+var b = 'ㅎㅇ';
+console.log(b);
+
+</script>
+<hr>
+<h3> 3. HTML 문서 내 : document.write()</h3>
+<p>
+HTML 문서 내에 출력한다.<br>
+HTML tag(태그)를 넣어서 사용할 수 없음?있음?<br>
+</p>
+<script type="text/javascript">
+document.write("안녕하세요<br>"); 
+document.write("1+2 = " + (1+2)+"<br>");
+document.write("1+2 = " , (1+2)+"<br>");
+var c = 'ㅎㅇ';
+document.write(c+"<br>");
+// document.write("<h3> \<h3\> h3 tag 적용해서 출력</h3>") → html 특수문자로 처리해야함
+document.write("<h3> &lt;h3&gt; h3 tag 적용해서 출력</h3>")
+</script>
+
+</body>
+</html>

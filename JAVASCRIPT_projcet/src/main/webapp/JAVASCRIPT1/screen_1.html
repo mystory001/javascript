@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>screen 객체</title>
+</head>
+<body>
+
+<script type="text/javascript">
+let ah = screen.availHeight;
+let aw = screen.availWidth;
+let h = screen.height;
+let w = screen.width;
+let c = screen.colorDepth;
+let p = screen.pixelDepth;
+
+document.write(`사용 가능한 높이 : ${ah} <br>`);
+document.write(`사용 가능한 폭 : ${aw} <br>`);
+document.write(`전체 높이 : ${h}<br>`);
+document.write(`전체 폭 : ${w}<br>`);
+document.write(`이미지 비트 심도 : ${c}<br>`);
+document.write(`색상 해상도 : ${p}<br><hr>`);
+
+document.write(`전체 나타낼 수 있는 해상도 ${Math.pow(2, p)}가지`);
+</script>
+
+</body>
+</html>

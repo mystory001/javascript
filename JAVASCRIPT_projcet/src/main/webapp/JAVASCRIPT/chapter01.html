@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 작성 방법</title>
+</head>
+
+<body>
+
+	<h3>내부 스크립트 형식 작성</h3>
+	<script type="text/javascript">
+	//type="text/javascript" 적어주지 않아도 되지만, 웹 버전에 따라 동작하지 않을 수 있다.
+		alert("Welcom Javascript World!");
+	</script>
+	<hr>
+	
+	<h3>외부 스크립트 형식 작성</h3>	
+	<script type="text/javascript" src="js/sample.js"></script>
+	<hr>
+	
+	<h3>요소의 속성으로 사용</h3>
+<!--input button id를 설정해 주고 js나 jquery로 해당하는 id에 이벤트를 처리를 줄 수 있다.  
+	버튼 만들기 형식 : <input type="button" value="버튼에 표시할 내용" javascript/jQuery 이벤트> -->
+	input type="button"<br>
+	<input type="button" value="click" onclick="alert('한 번 클릭')"><br>
+	<input type="button" value="double click" ondblclick="alert('두 번 클릭')"><br>
+	<input type="button" value="mouse over" onmouseover="alert('마우스 오버')"><br>
+	<hr>
+<!--button tag : 클릭할 수 있는 버튼을 정의하는 태그 -->
+	button 태그<br>
+	<button type="button" onclick="alert('button 클릭, 한 번 클릭')">click</button><br>
+	<button type="button" ondblclick="alert('더블클릭')">double click</button><br>
+	<button type="button" onmouseover="alert('마우스 오버')">mouse over</button><br>
+	<hr>
+	<button type="submit" value="전송">전송</button><br>
+	<button type="reset" value="초기화">초기화</button><br>
+	
+	
+</body>
+</html>

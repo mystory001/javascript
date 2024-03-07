@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>screen 객체</title>
+</head>
+<body>
+<p>공지창 스크림의 중앙에 배치하기</p>
+<script type="text/javascript">
+
+function openCenter(doc, win, w, h) {
+	
+	//UI 영역을 제외한 영역의 가로 너비 - 팝업창의 가로 너비/2
+	let left = (screen.availWidth-w)/2; //팝업창의 왼쪽 좌표
+	//UI 영역을 제외한 영역의 세로 너비 - 팝업창의 세로 너비/2
+	let top = (screen.availHeight-h)/2; //팝업창의 오른쪽 좌표
+	let opt = ("left = " + left + ", top = " + top + ", width = " + w + ", height = " + h); 
+	
+	window.open(doc, win, opt);
+}
+
+//함수 호출 : 문서명 ,창이름, 팝업창 너비, 팝업창 높이
+openCenter("open_window.html", "pop", 300,300);
+
+</script>
+
+
+</body>
+</html>

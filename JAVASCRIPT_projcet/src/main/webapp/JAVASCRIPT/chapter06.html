@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>변수와 함수</title>
+</head>
+<body>
+<h1>변수 선언과 할당</h1>
+<p> 호이스팅 : 
+</p>
+<hr>
+<script type="text/javascript">
+document.write(`<h2>1. 변수명 : 스크립트 안에서 자유롭게 사용할 수 있는 변수(전역변수)</h2>`);
+sub = "전역변수";
+document.write("sub = " + sub + "<br><hr>");
+// === document.write(`sub = ${sub}<br>`);
+
+sub ="스크립트 안에서 자유롭게 사용할 수 있는 변수";
+document.write(`sub = ${sub}<br><hr>`);
+
+document.write(`<h2>2. var 변수명 : 동일한 변수명으로 중복 선언과 재할당이 가능한 변수(지역변수)</h2>`);
+var subject = "java";
+document.write(`subject = ${subject}<hr>`);
+
+var subject = "javascript";
+document.write(`subject = ${subject}<hr>`);
+
+var subject = "spring"
+document.write(`subject = ${subject}<hr>`);
+
+document.write(`<h2>3. let 변수명 : 동일한 변수명으로 중복 선언 불가하고, 재할당이 가능한 변수(지역변수)</h2>`);
+let subject1 = "java";
+document.write(`subject1 = ${subject1}<hr>`);
+
+//let subject1 = "javascript";
+//document.write(`subject1 = ${subject1}<hr>`);
+
+subject1 = "javascript";
+document.write(`subject1 = ${subject1}<hr>`);
+
+document.write(`<h2>4. const 변수명 : 동일한 변수명으로 중복 선언과 재할당이 불가능한 변수(상수화 : 지역변수)</h2>`);
+
+const subject2 = "java";
+document.write(`subject2 = ${subject2}<hr>`);
+
+//const subject2 = "javascript";
+//document.write(`subject2 = ${subject2}<hr>`);
+
+//나타나지않음
+subject2 = "javascript";
+document.write(`subject2 = ${subject2}<hr>`);
+
+
+
+
+</script>
+</body>
+</html>

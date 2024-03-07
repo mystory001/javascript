@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Date 객체 테스트 - 날짜 계산 프로그램</title>
+<style type="text/css">
+#containner{
+	margin: 50px auto;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	border: 2px double #222;
+	background-color: #d8f0fc;
+	text-align: center;
+}
+h1{
+	margin-top: 80px;
+}
+.accent{
+	font-size:1.8em;
+	font-weight: bold;
+	color:red;
+}
+
+</style>
+</head>
+<body>
+<div id="containner">
+<h1>책 읽기</h1>
+<p><span class="accent" id="result">
+</span>일 연속으로<br> 책일기를 달성했습니다.<br></p>
+<p>축하합니다.</p>
+</div>
+<script type="text/javascript">
+let now = new Date("2024-02-05"); //오늘 날짜를 객체로 지정
+let firstDay = new Date("2023-10-25"); //시작 날짜를 객체로 지정
+
+let toNow = now.getTime(); //오늘까지 지난 시간(/ms)
+let toFirst = firstDay.getTime(); //첫날까지 지난 시간(/ms)
+let passedTime = toNow - toFirst; //첫날부터 오늘까지 지난 시간(/ms)
+document.write(passedTime);
+
+passedTime = Math.round(passedTime/(1000*60*60*24)); //밀리초를 일 수로 계산하고 반올림(밀리초*초*분*시)
+
+document.querySelector('#result').innerText = passedTime;
+</script>
+<hr>
+<script type="text/javascript">
+let today = new Date();
+document.write(`오늘은 ${today.getFullYear()}년 ${today.getMonth()+1}월 
+				${today.getDate()}일 `);
+
+switch (today.getDay()) {
+case 0: document.write("일요일");
+break;
+case 1: document.write("월요일");
+break;
+case 2: document.write("화요일");
+break;
+case 3: document.write("수요일");
+break;
+case 4: document.write("목요일");
+break;
+case 5: document.write("금요일");
+break;
+case 6: document.write("토요일");
+break;
+}
+</script>
+
+</body>
+</html>

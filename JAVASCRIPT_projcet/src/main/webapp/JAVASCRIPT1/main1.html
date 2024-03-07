@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>메인 창1</title>
+</head>
+<body onload="openPopup()">
+<p>문서를 열면 팝업 창이 표시</p>
+
+<script type="text/javascript">
+function openPopup() {
+	let newWin = window.open("open_window.html","pop","width=400, height=500", left="200", top="200");
+	//window.open() 메소드는 메인 홈페이지에 찾아가서 팝업 차단이 되어 있으면 null값을 가짐
+	if(newWin==null){
+		window.alert("팝업이 차단되었습니다. 팝업 차단 해주세요.");
+	}
+	//새로고침 할 때마다 팝업 차단이 해제되어 있으면 가로 100px, 세로 100px 씩 이동
+	newWin.moveBy(100,100);
+}
+
+</script>
+
+</body>
+</html>

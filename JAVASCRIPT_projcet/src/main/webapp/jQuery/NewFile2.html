@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery 이벤트와 이벤트 핸들러</title>
+<!-- CDN방식 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<button id="btn_1">화면 변경1</button>
+<button id="btn_2">화면 변경2</button>
+<button id="btn_3">화면 변경3</button>
+<p>
+<div id="d">색상변경</div>
+</p>
+<script type="text/javascript">
+//이벤트 : 웹 문서에서 일어나는 사건
+//이벤트 명령어 방식
+//$("선택자").이벤트명 ex)$("선택자").click(function(){실행문;});
+
+//이벤트 핸들러 : 이벤트가 발생했을 때 실행되는 함수
+//이벤트 등록 메소드 방식
+//$("선택자").on("이벤트명",실행할함수) ex)$("선택자").on("click", function(){실행문;});
+
+
+$(function(){
+	
+	//이벤트 명령어 방식 : 하나의 선택자에 이벤트 하나를 등록하여 실행하는 방법
+	$("#btn_1").click(function(){
+		alert("이미지가 변경됨 btn_1");
+		});
+	
+	//이벤트 등록 메소드 방식 : on("이벤트명", 실행할 함수)
+	//하나의 선택자에 이벤트 여러 개를 등록하여 실행하는 방법
+	$("#btn_2").on("click",function(){
+		alert("이미지가 변경됨 btn_2");
+		});
+	
+	//이벤트 발생을 한 번만 실행 : one("이벤트명",실행할 함수)
+	$("#btn_3").one("click",function(){
+		alert("이미지가 변경됨 btn_3");
+		});
+	
+	//이벤트 제거 : off("이벤트명") -> 클릭 이벤트를 막아주는 역할
+	$("#btn_1").off("click");
+	
+	//하나의 선택자에 이벤트 여러 개 등록하여 실행하는 방법
+	$("#d").on({
+		
+		"mouseover" : function(){
+			$("#d").css({
+				"backgroundColor" : "#ccc",
+				"color" : "red",
+				"width" : 200,
+				"height" : 200
+			})
+		},
+		
+		"mouseout" : function(){
+			$("#d").css("color", "#000");
+		}
+		
+	});
+	
+	
+});
+
+</script>
+
+</body>
+</html>

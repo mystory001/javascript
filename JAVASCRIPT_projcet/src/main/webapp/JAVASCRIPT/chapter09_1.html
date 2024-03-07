@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>이벤트와 이벤트 처리기</title>
+<link rel="stylesheet" href="css/function.css">
+</head>
+<body>
+<ul>
+<li><a href="#" onclick="chageBg(`red`)">Red</a></li>
+<li><a href="#" onclick="chageBg(`orange`)">Orange</a></li>
+<li><a href="#" onclick="chageBg(`yellow`)">Yellow</a></li>
+<li><a href="#" onclick="chageBg(`green`)">Green</a></li>
+<li><a href="#" onclick="chageBg(`blue`)">Blue</a></li>
+<li><a href="#" onclick="chageBg(`purple`)">Purple</a></li>
+</ul>
+<div id="result"></div>
+<script type="text/javascript">
+//프로퍼티 방식
+
+function chageBg(color) {
+	let result = document.querySelector('#result');
+	//document.querySelector('선택자'); : 해당 선택자를 만족하는 요소 하나를 반환
+	result.style.backgroundColor = color;
+}
+
+</script>
+
+</body>
+</html>

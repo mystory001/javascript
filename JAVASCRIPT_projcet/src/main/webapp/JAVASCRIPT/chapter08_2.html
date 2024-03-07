@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>익명 함수</title>
+</head>
+<body>
+<script type="text/javascript">
+//익명 함수 : 함수에 이름이 없음 → 재활용이 안된다.
+//함수 코드 자체를 식으로 취급해서 변수에 할당(대입)함.
+//함수 이름이 없는 대신에 할당한 변수명으로 호출함.
+let sum = function(a, b) {
+return a + b;
+}
+document.write(`${sum}<br>`);	
+document.write(`함수 실행 결과 : ${sum(10,20)}<br>`);
+//다른 함수의 매개변수로 사용하기 위해서 사용함.
+</script>
+<hr>
+<script type="text/javascript">
+//익명 함수 형식 : 함수 이름을 지정하지 않고 변수에 함수를 담아서 저장(함수 객체)
+//함수 수행 시 변수명을 사용하여 호출함
+//함수를 다른 함수의 매개 변수로 넣어주고 함수 내에서 함수를 호출해서 사용하도록 하는 방법
+//호출형식) 변수명(매개변수값)
+
+//sum함수가 매개 변수로 넘어온다
+function cal(func) {
+	let add = func(10,20);
+	document.write(`add : ${add}<br>`);
+	return add;
+}
+
+document.write(`cal함수 : ${cal(sum)}`);
+
+</script>
+<hr>
+<script type="text/javascript">
+//즉시 실행 함수 : 함수가 정의되는 순간 즉시 실행되는 함수
+//매개변수값이 없는 즉시 실행 함수
+(function(){
+	let userName = prompt("이름을 입력하세요.");
+	document.write(`안녕하세요? <span> ${userName} </span>님<br>`);
+})();
+</script>
+<hr>
+
+<script type="text/javascript">
+//즉시 실행 함수 : 함수가 정의되는 순간 즉시 실행되는 함수
+//매개변수값이 있는 즉시 실행 함수
+(function(a,b){
+	let sum1 = a + b;
+	document.write(`함수 실행 결과 : ${sum1}<br>`);
+})(100,200);
+	document.write(`함수 실행 결과 : ${sum1}<br>`); //sum1이 지역변수이므로 결과가 나타나지 않음
+
+</script>
+<hr>
+<script type="text/javascript">
+//화살표 함수(fat arrow =>)
+//익명 함수에서만 사용할 수 있는 표기법
+//function이라는 키워드 대신 '=>(fat arrow)' 이용해서 함수를 생성하는 방식
+
+//1. 매개변수가 없는 경우
+const hi = function(){
+	return "hi";
+}
+document.write(`<h3>함수 실행 결과 : ${hi()}</h3>`); //실행
+
+//function 키워드 없음(매개변수만 표시, 소괄호만 표시)
+//function 키워드가 => 로 대신
+//함수 수행 내용이 한 줄뿐이면 중괄호({})생략, return문 생략 가능
+const hi1 = () => { return "hi"}; //fat arrow
+// == const hi1 = () => "hi"; 
+document.write(`<h3>함수 실행 결과 : ${hi1()}</h3>`); //실행
+</script>
+<hr>
+<script type="text/javascript">
+//2. 매개변수가 있는 경우
+//매개변수가 1개인 경우 : 매개 변수의 괄호() 생략 가능
+let hello = user => {document.write(`<h3>${user} 님, hello</h3>`);}
+hello("홍길동");
+
+//매개변수가 2개 이상인 경우
+let div = (a,b) => {return a/b};
+// == let div = (a,b) => a/b;
+document.write(`<h3>함수 수행 결과 : ${div(10,2)}</h3>`);
+
+
+</script>
+
+</body>
+</html>

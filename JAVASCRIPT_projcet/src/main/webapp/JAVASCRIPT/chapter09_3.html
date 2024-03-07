@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>설명글 표시하는 자바스크립트</title>
+</head>
+<body>
+	<div id="item">
+		<img src="image.png" alt="">
+		<button class="over" id="open">상세 설명 보기</button>
+		<div id="desc" class="detail">
+			<h3>등심붓꽃</h3>
+			<p>북아메리카 원산으로 각지에서 관상초로 흔히 심고 있는 귀화식물이다. 길가나 잔디밭에서 흔히 볼 수 있다. 아주
+				작은 씻앗을 무수히 많이 가지고 있는데 바람을 이용해 씨앗들을 날려보내거나, 뿌리줄기를 통해 동인한 개체들을 많이 만들어
+				냄으로써 번식한다.</p>
+			<button id="close">상세 설명 닫기</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		
+		//형식)웹요소.onclick="함수";
+		//형식)document.요소명.style.속성명 = 속성값;
+		
+	document.querySelector('#open').onclick = function(){
+		document.querySelector('#desc').style.display = "block"; // 상세 설명 부분을 화면에 표시
+		document.querySelector('#open').style.display  ="none"; //'상세 설명 보기' 단추를 화면에서 감춤
+	}
+	
+	document.querySelector('#close').onclick = function(){
+		document.querySelector('#desc').style.display = "none"; // 상세 설명 부분을 화면에서 감춤
+		document.querySelector('#open').style.display  ="block"; //'상세 설명 보기' 단추를 화면에 표시
+	}
+	
+	</script>
+</body>
+</html>

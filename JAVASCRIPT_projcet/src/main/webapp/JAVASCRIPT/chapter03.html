@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 기본 입출력</title>
+</head>
+<body>
+<h3>입력하기</h3>
+<p> 1. 확인 창 입력 : confirm()<br>
+2. 프롬프트 창에서 입력 : prompt()<br>
+</p>
+<hr>
+<h3>1. 확인 창 입력 : confirm("질문 내용")</h3><br>
+<p>[확인]이나 [취소]버튼 중에서 클릭하여 선택하면 그 결과값을 변수에 저장<br>
+결과가 true/false 값으로 반환받은 값을 프로그램에 처리할 수 있음<br>
+※자바와 달리 자바스크립트는 자료형을 붙히지 않음. 알아서 처리함.<br>
+</p>
+<script type="text/javascript">
+//형식) confirm("질문")
+var reply = confirm("정말 삭제하시겠습니까?");
+document.write(reply);
+//확인을 누르면 ture, 취소를 누르면 false라고 나타남.
+</script>
+<hr>
+<h3>2. 프롬프트 창에서 입력 : prompt()</h3><br>
+<p>
+사용자가 입력한 텍스트 필드 내의 내용(데이터값)을 가져와서 프로그램 내에서 사용<br>
+키보드로 입력한 데이터 값을 변수에 저장하여 사용함.<br>
+자바에서 scanner와 비슷함.<br>
+</p>
+<script type="text/javascript">
+//형식) prompt("질문 내용", ["기본값"]);
+var name = prompt("이름을 입력하세요.");
+alert(name);
+document.write(name);
+//취소하였을 때 null값이 나오고, 확인을 하면 공백이 나옴.
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>현재 시간</title>
+</head>
+<body>
+<p>현재 시각 <span id="current" class="display"></span></p>
+<script type="text/javascript">
+setInterval(displayNow, 1000); //1초마다 시간 계산 함수 실행
+
+function displayNow() {
+	let now = new Date();
+	let currentTime = now.toLocaleTimeString();
+	
+	document.querySelector("#current").innerHTML = currentTime;
+}
+
+</script>
+
+</body>
+</html>

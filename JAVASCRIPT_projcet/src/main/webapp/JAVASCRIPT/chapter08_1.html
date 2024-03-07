@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>1부터 n까지 숫자를 더하는 함수</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function calcSum(n) {
+			let sum = 0;
+			for (let i = 1; i < n + 1; i++) {
+				sum += i;
+			}
+			document.write(`<h3>1부터 ${num}까지 더한 합은 ${sum}</h3><br>`);
+		}
+
+		let num = prompt("얼마까지 더할까요?");
+		if (num !== null) {
+			calcSum(parseInt(num));
+		}
+		
+		
+		function calcMuti(n){
+			let multi = 1;
+			for (let i = 1; i < n+1; i++){
+				multi *= i;
+			}
+			document.write(`<h3>1부터 ${num1}까지 더한 곱은 ${multi}</h3>`);
+		}
+		
+		let num1 = prompt("얼마까지 곱할까요?");
+		if (num1 !== null) {
+			calcMuti(parseInt(num1));
+		}
+		
+	</script>
+</body>
+</html>

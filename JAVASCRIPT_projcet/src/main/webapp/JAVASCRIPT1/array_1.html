@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>배열(Array) 합치기</title>
+</head>
+<body>
+<h1>배열 합치기(배열 연결)</h1>
+배열명.concat(합칠(연결할) 배열명) 메소드
+<hr>
+<script type="text/javascript">
+let nums = [1,2,3];
+let chars = ["a","b","c","d"];
+
+document.write("nums : " + nums + "<br>");
+document.write("chars : " + chars +"<br><hr>");
+
+let numsChars = nums.concat(chars);
+let charsNums = chars.concat(nums);
+document.write("nums + chars = " + numsChars + "<br>");
+document.write("chars + nums = " + charsNums + "<br><hr>");
+</script>
+
+<h1>배열 내 요소끼리 합치기</h1>
+join('구분자지정') 배열 요소 사이에 지정한 구분자를 넣어서 문자로 만듦<br>
+배열내의 각 요소들을 연결해서 하나의 문자열로 만듦<hr>
+<script type="text/javascript">
+let string1 = nums.join();
+document.write(`string1 구분자 없이 ${string1} 구분자가 없을 때 ,로 나타남<br>`);
+
+let string2 = nums.join('/');
+document.write(`string2 구분자 /로 했을 경우 ${string2}<br>`);
+
+let string3 = nums.join('');
+document.write(`string3 구분자 공백으로 했을 경우 ${string3}<br><hr>`);
+</script>
+
+<h1>새로운 요소 추가 : length도 같이 반환함</h1>
+배열 맨 끝에 요소 추가 : 배열명.push(요소값)<br>
+배열 처음에 요소 추가 : 배열명.unshift(요소값)<hr>
+<script type="text/javascript">
+let nums1 = [1,2,3];
+document.write("nums1 요소 : " +nums1+"<br>");
+let ret1 = nums1.push(4,5); 
+document.write(`nums1 끝에 요소 추가 ${nums1}<br>`);
+
+let ret2 = nums1.unshift(0);
+document.write(`nums1 처음에에 요소 추가 ${nums1}<br>`);
+
+document.write(`ret1 : ${ret1}, ret2 : ${ret2}, 추가된 nums1 : ${nums1}<br><hr>`);
+</script>
+
+<h1>요소값 제거</h1>
+배열 맨 끝에 요소 제거 : 배열명.pop(요소값)<br>
+배열 처음에 요소 제거 : 배열명.shift(요소값)<hr>
+<script type="text/javascript">
+let chars1 = ["a","b","c","d"];
+let popped1 = chars1.pop();
+document.write(`배열 맨 끝 요소 ${popped1} 제거, chars1 : ${chars1}<br>`);
+
+let popped2 = chars1.shift();
+document.write(`배열 처음 요소 ${popped2} 제거, chars1 : ${chars1}<br><hr>`);
+</script>
+
+<h1>원하는 위치에 요소를 추가, 삭제 splice()</h1>
+원본에 변경이 일어남<br>
+한 번에 요소를 2개 이상 추가하거나 제거(새로운 배열로 결과값을 반환)<br>
+<script type="text/javascript">
+//인수가 1개일 경우 : 지정한 인덱스 위치부터 배열의 끝 요소까지 모두 삭제 -> 새로운 배열로 만들어짐
+let numbers2 = [1,2,3,4,5];
+let newNumbers = numbers2.splice(2);
+document.write("반환된 배열 newNumbers : " , newNumbers + "<br>"); //인덱스 2번부터 끝까지 가져와서 새로운 배열로 만듦
+document.write("변경된 배열 numbers2 : " , numbers2 + "<br><hr>");
+
+//인수가 2개일 경우 : 지정한 인덱스 위치부터 지정한 개수만큼 요소 삭제 -> 새로운 배열로 만들어짐
+let study = ["html","css","javascript","web"];
+let newStudy = study.splice(2, 1); //2번째 요소부터 1개 요소 삭제 : 배열명.splice(인덱스위치, 개수)
+document.write(`반환된 배열 newStudy : ${newStudy}<br>`);
+document.write(`변경된 배열 study : ${study}<br><hr>`);
+
+//인수가 3개일 경우 :지정한 인덱스 위치부터 지정한 개수만큼 요소를 삭제 후 새로 추가할 요소를 지정 -> 새로운 배열로 만들어짐
+let newStudy1 = study.splice(2, 1,"java"); //2번째 요소부터 1개 요소 삭제 후 "java"요소를 추가
+document.write(`반환된 배열 newStudy1 : ${newStudy1}<br>`);
+document.write(`변경된 배열 study : ${study}<br><hr>`);
+</script>
+
+<h1>기존 배열을 바꾸지 않으면서 요소를 꺼내는 slice()</h1>
+원본 배열에 변경이 없음<hr>
+<script type="text/javascript">
+//인수가 1개인 경우 : 지정한 인덱스 위치부터 지정한 개수만큼 요소를 꺼냄 -> 새로운 배열로 만들어짐
+let colors = ["red","green","blue","white","black"];
+let colors1 = colors.slice(2); //인덱스 값이 2인 요소부터 마지막 요소까지 꺼내기
+document.write(`반환된 배열 colors1 : ${colors1}<br>`);
+document.write(`변경된 배열 colors : ${colors}<br><hr>`); //원본 배열에 변경이 없음
+
+//인수가 2개인 경우 : 지정한 개수만큼 요소 삭제가 아니고(구간을 의미) 위치 직전까지 반환
+let colors2 = colors.slice(2,4); //2번째 위치로부터 4번째 위치 '직전'까지 반환함. 즉 인덱스 2에서 3까지.
+let colors3 = colors.slice(2,5); //2번째 위치로부터 5번째 위치 '직전'까지 반환함. 즉 인덱스 2에서 4까지.
+document.write(`반환된 배열 colors2 : ${colors2}<br>`);
+document.write(`반환된 배열 colors3 : ${colors3}<br>`);
+document.write(`변경된 배열 colors : ${colors}<br><hr>`); //원본 배열에 변경이 없음
+</script>
+
+
+</body>
+</html>

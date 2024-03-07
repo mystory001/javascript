@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>배열(Array) 객체</title>
+</head>
+<body>
+<!-- 형식) new Array(); 
+형식) let 배열명 = new Array(배열개수);
+ex)
+let arr = new Array();
+let arr = ["1","2","3","4"];
+let arr = new Array(4);
+let arr = new Array("1","2","3","4");-->
+<script type="text/javascript">
+let numbers = ["one","two","three","four"];
+for(let i = 0; i<numbers.length; i++){
+	document.write(`numbers${[i]} = ${numbers[i]}<br>`);
+}
+document.write("<hr>");
+let numbers1 = Array("one","two","three","four");
+// for(let i = 0; i<numbers1.length; i++){
+// 	document.write(`numbers${[i]} = ${numbers[i]}<br>`);
+// }
+//향상된 for문 : in구문으로 사용
+for(let j in numbers1){
+	document.write(`numbers${[j]} = ${numbers[j]}<br>`);
+}
+
+document.write("<hr>");
+let numbers2 = new Array("one","two","three","four");
+for(let i = 0; i<numbers2.length; i++){
+	document.write(`numbers${[i]} = ${numbers[i]}<br>`);
+}
+document.write("<hr>");
+//요소값 수정
+numbers2[0] = "하나";
+//향상된 for문
+for(let i = 0; i<numbers2.length; i++){
+	document.write(`numbers${[i]} = ${numbers[i]}<br>`);
+}
+
+
+
+</script>
+
+
+</body>
+</html>
